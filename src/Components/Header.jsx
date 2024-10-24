@@ -11,6 +11,11 @@ const Header = ({ name, setName, loading, onCheckKhodam }) => {
           required=""
           value={name}
           onChange={(e) => setName(e.target.value)}
+          onKeyDown={ (e) => {
+            if(e.key === "Enter") {
+              onCheckKhodam();
+            }
+          }}
         />
         <label for="name" className="form__label">
         </label>
