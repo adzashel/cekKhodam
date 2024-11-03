@@ -14,4 +14,4 @@ const ResetButton = ({ result , onReset }) => {
   )
 }
 
-export default ResetButton
+export default ResetButton;

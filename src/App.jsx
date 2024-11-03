@@ -4,7 +4,6 @@ import khodamList from "./data/khodam.json";
 import Header from "./Components/Header";
 import Body from "./Components/Body";
 
-
 function App() {
   const [name, setName] = useState("");
   const [result, setResult] = useState(null);
@@ -19,8 +18,7 @@ function App() {
     setResult(null); // Menghapus hasil sebelumnya jika ada
     // Memilih khodam secara acak dari daftar
     setTimeout(() => {
-      const randomKhodam =
-        khodamList[Math.floor(Math.random() * khodamList.length)];
+      const randomKhodam = khodamList[Math.floor(Math.random() * khodamList.length)];
       setResult(randomKhodam);
       setLoading(false); // Menutup loading
     }, 2500); // Simulasi waktu yang dibutuhkan
@@ -35,9 +33,14 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-       <Header name={ name } setName={ setName } loading={ loading } onCheckKhodam={ checkKhodam }/>
+        <Header
+          name={name}
+          setName={setName}
+          loading={loading}
+          onCheckKhodam={checkKhodam}
+        />
       </header>
-      <Body name={ name } result={ result } onReset={ reset } loading={ loading }/>
+      <Body name={name} result={result} onReset={reset} loading={loading} />
     </div>
   );
 }
